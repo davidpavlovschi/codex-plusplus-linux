@@ -1,0 +1,13 @@
+Package: codex-plusplus-linux
+Version: 0.1.0
+Section: devel
+Priority: optional
+Architecture: amd64
+Depends: nodejs (>= 20) | nodejs, npm, tar, desktop-file-utils
+Maintainer: Doved and Codex++ Linux contributors <davidpavlovschi@users.noreply.github.com>
+Homepage: https://github.com/davidpavlovschi/codex-plusplus-linux
+Description: Unofficial OpenAI Codex desktop app with Codex++ tweaks for Linux
+ Installs a desktop launcher and CLI wrapper that downloads the unofficial
+ Linux Codex desktop shell, installs the OpenAI Codex CLI runtime, injects
+ Codex++ tweaks, pins the app on Cinnamon when available, and writes per-user
+ logs.

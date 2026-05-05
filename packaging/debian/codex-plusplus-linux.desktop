@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Codex++ Linux
+Comment=Unofficial OpenAI Codex desktop app with Codex++ tweaks for Linux
+Exec=/usr/bin/codex-plusplus-linux launch
+Icon=codex-plusplus-linux
+Terminal=false
+Categories=Development;
+StartupNotify=true
