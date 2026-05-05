@@ -74,7 +74,7 @@ Not currently supported:
 Download the latest `.deb` from GitHub Releases, then install it:
 
 ```sh
-sudo apt install ./codex-plusplus-linux_0.1.1_amd64.deb
+sudo apt install ./codex-plusplus-linux_0.2.0_amd64.deb
 ```
 
 Then run:
@@ -115,7 +115,7 @@ scripts/build-deb.sh
 The package is written to:
 
 ```text
-dist/codex-plusplus-linux_0.1.1_amd64.deb
+dist/codex-plusplus-linux_0.2.0_amd64.deb
 ```
 
 ## Use The App
@@ -136,6 +136,72 @@ Short alias:
 
 ```sh
 codex++ launch
+```
+
+## Right-Edge Panel API
+
+Codex++ Linux includes a local daemon for panels, launchers, and desktop widgets:
+
+```sh
+codex-plusplus-linux daemon
+```
+
+The Debian package installs a user systemd service:
+
+```sh
+systemctl --user status codex-plusplus-linux-daemon.service
+```
+
+Panel JSON endpoints:
+
+```text
+http://127.0.0.1:17654/status
+http://127.0.0.1:17654/usage
+http://127.0.0.1:17654/health
+http://127.0.0.1:17654/active-window
+```
+
+CLI equivalent:
+
+```sh
+codex-plusplus-linux status-json
+codex-plusplus-linux usage
+```
+
+The status payload includes health, recent git projects, recent Codex sessions, available actions, and local token usage with an API-equivalent USD estimate. The estimate is not ChatGPT/Codex subscription billing; it is a local calculation using OpenAI API token prices.
+
+Project launcher:
+
+```sh
+codex-here
+codex-plusplus-linux open /path/to/project
+```
+
+## Nemo File Manager Actions
+
+Install optional Nemo context-menu actions for Linux Mint/Cinnamon from a source checkout:
+
+```sh
+integrations/nemo/install.sh
+```
+
+Or from the Debian package install:
+
+```sh
+/opt/codex-plusplus-linux/integrations/nemo/install.sh
+```
+
+The actions are installed to `~/.local/share/nemo/actions` and add:
+
+- Open folder in Codex
+- Ask Codex about this file
+- Explain this error log
+- Generate README for this folder
+
+Restart Nemo if they do not appear immediately:
+
+```sh
+nemo -q
 ```
 
 ## Health Check

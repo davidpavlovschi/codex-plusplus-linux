@@ -9,4 +9,15 @@ if command -v gtk-update-icon-cache >/dev/null 2>&1; then
   gtk-update-icon-cache -q /usr/share/icons/hicolor || true
 fi
 
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+  for runtime in /run/user/*; do
+    [ -d "$runtime" ] || continue
+    user_id="$(basename "$runtime")"
+    user_name="$(getent passwd "$user_id" | cut -d: -f1)"
+    [ -n "$user_name" ] || continue
+    sudo -u "$user_name" XDG_RUNTIME_DIR="$runtime" DBUS_SESSION_BUS_ADDRESS="unix:path=$runtime/bus" \
+      systemctl --user disable --now codex-plusplus-linux-daemon.service 2>/dev/null || true
+  done
+fi
+
 exit 0

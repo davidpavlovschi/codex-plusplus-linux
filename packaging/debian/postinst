@@ -29,6 +29,14 @@ pin_for_user() {
 
 if [ -n "$SUDO_USER" ] && [ "$SUDO_USER" != "root" ]; then
   pin_for_user "$SUDO_USER"
+  user_id="$(id -u "$SUDO_USER" 2>/dev/null || true)"
+  if [ -n "$user_id" ] && command -v systemctl >/dev/null 2>&1; then
+    sudo -u "$SUDO_USER" XDG_RUNTIME_DIR="/run/user/$user_id" DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$user_id/bus" \
+      systemctl --user daemon-reload 2>/dev/null || true
+    sudo -u "$SUDO_USER" XDG_RUNTIME_DIR="/run/user/$user_id" DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$user_id/bus" \
+      systemctl --user enable --now codex-plusplus-linux-daemon.service 2>/dev/null || true
+  fi
+  sudo -u "$SUDO_USER" /opt/codex-plusplus-linux/integrations/nemo/install.sh >/dev/null 2>&1 || true
 fi
 
 exit 0

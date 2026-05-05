@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Generate README for this folder
+Comment=Ask Codex to generate a README for the selected folder
+Exec=codex-plusplus-linux generate-readme %F
+Icon-Name=codex-plusplus-linux
+Selection=s
+Extensions=dir;
+Dependencies=codex-plusplus-linux;

@@ -1,0 +1,12 @@
+[Unit]
+Description=Codex++ Linux panel API
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/codex-plusplus-linux daemon
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -16,7 +16,8 @@ mkdir -p \
   "${BUILD_ROOT}/usr/share/applications" \
   "${BUILD_ROOT}/usr/share/icons/hicolor/256x256/apps" \
   "${BUILD_ROOT}/usr/share/icons/hicolor/scalable/apps" \
-  "${BUILD_ROOT}/usr/share/doc/${PKG_NAME}"
+  "${BUILD_ROOT}/usr/share/doc/${PKG_NAME}" \
+  "${BUILD_ROOT}/usr/lib/systemd/user"
 
 cp "${ROOT}/packaging/debian/control" "${BUILD_ROOT}/DEBIAN/control"
 cp "${ROOT}/packaging/debian/postinst" "${BUILD_ROOT}/DEBIAN/postinst"
@@ -41,6 +42,12 @@ exec node /opt/codex-plusplus-linux/bin/codex-plusplus-linux.js "$@"
 EOF
 chmod 0755 "${BUILD_ROOT}/usr/bin/codex++"
 
+cat > "${BUILD_ROOT}/usr/bin/codex-here" <<'EOF'
+#!/usr/bin/env sh
+exec node /opt/codex-plusplus-linux/bin/codex-plusplus-linux.js open "${PWD}"
+EOF
+chmod 0755 "${BUILD_ROOT}/usr/bin/codex-here"
+
 cp "${ROOT}/packaging/debian/codex-plusplus-linux.desktop" \
   "${BUILD_ROOT}/usr/share/applications/codex-plusplus-linux.desktop"
 cp "${ROOT}/assets/codex-plusplus-linux.png" \
@@ -49,6 +56,8 @@ cp "${ROOT}/assets/codex-plusplus-linux.svg" \
   "${BUILD_ROOT}/usr/share/icons/hicolor/scalable/apps/codex-plusplus-linux.svg"
 cp "${ROOT}/README.md" "${BUILD_ROOT}/usr/share/doc/${PKG_NAME}/README.md"
 cp "${ROOT}/LICENSE" "${BUILD_ROOT}/usr/share/doc/${PKG_NAME}/copyright"
+cp "${ROOT}/packaging/systemd/codex-plusplus-linux-daemon.service" \
+  "${BUILD_ROOT}/usr/lib/systemd/user/codex-plusplus-linux-daemon.service"
 
 mkdir -p "$(dirname "${DEB_PATH}")"
 fakeroot dpkg-deb --build "${BUILD_ROOT}" "${DEB_PATH}"

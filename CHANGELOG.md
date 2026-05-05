@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0
+
+- Add local right-edge panel API daemon on `127.0.0.1:17654`.
+- Add panel status JSON with health, recent projects, sessions, actions, and usage.
+- Add local token usage aggregation and API-equivalent USD estimates.
+- Add `codex-here`, `open`, `ask-file`, `explain-log`, `generate-readme`, `ask-active-window`, and `ask-clipboard` commands.
+- Add Nemo file manager actions for Linux Mint/Cinnamon.
+- Install a user systemd service for the panel daemon from the Debian package.
+
 ## 0.1.1
 
 - Add bundled `Codex Linux Badge` tweak.

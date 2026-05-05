@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Open folder in Codex
+Comment=Open the selected folder in Codex++ Linux
+Exec=codex-plusplus-linux open %F
+Icon-Name=codex-plusplus-linux
+Selection=s
+Extensions=dir;
+Dependencies=codex-plusplus-linux;

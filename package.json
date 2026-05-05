@@ -1,6 +1,6 @@
 {
   "name": "codex-plusplus-linux",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Unofficial Linux desktop installer and launcher for OpenAI Codex with Codex++ tweaks",
   "license": "MIT",
   "author": "Doved",
@@ -18,12 +18,14 @@
   "type": "module",
   "bin": {
     "codex-plusplus-linux": "bin/codex-plusplus-linux.js",
-    "codex++": "bin/codex-plusplus-linux.js"
+    "codex++": "bin/codex-plusplus-linux.js",
+    "codex-here": "bin/codex-plusplus-linux.js"
   },
   "scripts": {
     "install-app": "node bin/codex-plusplus-linux.js install",
     "doctor": "node bin/codex-plusplus-linux.js doctor",
-    "launch": "node bin/codex-plusplus-linux.js launch"
+    "launch": "node bin/codex-plusplus-linux.js launch",
+    "status-json": "node bin/codex-plusplus-linux.js status-json"
   },
   "keywords": [
     "codex",

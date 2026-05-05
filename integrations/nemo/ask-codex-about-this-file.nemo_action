@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Ask Codex about this file
+Comment=Ask Codex about the selected file
+Exec=codex-plusplus-linux ask-file %F
+Icon-Name=codex-plusplus-linux
+Selection=s
+Extensions=nodirs;
+Dependencies=codex-plusplus-linux;

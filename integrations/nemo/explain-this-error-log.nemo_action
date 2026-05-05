@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=Explain this error log
+Comment=Ask Codex to explain the selected error log
+Exec=codex-plusplus-linux explain-log %F
+Icon-Name=codex-plusplus-linux
+Selection=s
+Extensions=log;txt;
+Dependencies=codex-plusplus-linux;
