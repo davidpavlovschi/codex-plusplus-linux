@@ -38,6 +38,7 @@ This project also relies on standard Linux desktop infrastructure:
 - GTK icon cache tooling
 - systemd user services
 - Cinnamon `favorite-apps` settings for Linux Mint panel pinning
+- a small original Linux-inspired badge asset bundled with this project
 
 ## Project Authors
 

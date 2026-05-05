@@ -6,13 +6,13 @@
 npm install
 node --check lib/cli.js
 scripts/build-deb.sh
-dpkg-deb --info dist/codex-plusplus-linux_0.1.0_amd64.deb
+dpkg-deb --info dist/codex-plusplus-linux_0.1.1_amd64.deb
 ```
 
 ## Smoke Test
 
 ```sh
-sudo apt install ./dist/codex-plusplus-linux_0.1.0_amd64.deb
+sudo apt install ./dist/codex-plusplus-linux_0.1.1_amd64.deb
 codex-plusplus-linux doctor
 codex-plusplus-linux launch
 ```
@@ -27,7 +27,7 @@ Confirm:
 
 Upload:
 
-- `dist/codex-plusplus-linux_0.1.0_amd64.deb`
+- `dist/codex-plusplus-linux_0.1.1_amd64.deb`
 
 Suggested release notes:
 

@@ -1,0 +1,16 @@
+{
+  "id": "dev.doved.codex-linux-badge",
+  "name": "Codex Linux Badge",
+  "version": "0.1.0",
+  "githubRepo": "davidpavlovschi/codex-plusplus-linux",
+  "description": "Adds a small Linux badge inside the Codex desktop app.",
+  "author": {
+    "name": "Doved",
+    "url": "https://x.com/real_doved"
+  },
+  "homepage": "https://github.com/davidpavlovschi/codex-plusplus-linux",
+  "iconUrl": "./linux-badge.svg",
+  "tags": ["linux", "branding", "ui"],
+  "scope": "renderer",
+  "permissions": ["settings"]
+}

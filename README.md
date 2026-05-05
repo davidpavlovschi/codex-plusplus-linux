@@ -7,7 +7,7 @@
 
 Codex++ Linux is an unofficial Linux installer and launcher for the OpenAI Codex desktop app experience with Codex++ tweaks enabled.
 
-It packages the Linux setup into a normal desktop app: an installable `.deb`, a launcher icon, a Cinnamon panel favorite on Linux Mint, terminal commands, health checks, logs, and repair commands.
+It packages the Linux setup into a normal desktop app: an installable `.deb`, a launcher icon, a Cinnamon panel favorite on Linux Mint, terminal commands, health checks, logs, repair commands, and a bundled Linux badge tweak inside the Codex UI.
 
 > This project is unofficial. It is not affiliated with OpenAI, b-nnett, Codex++, or better-slop.
 
@@ -25,6 +25,7 @@ This repo adds the Linux user experience around those pieces:
 - `Codex++ Linux` desktop launcher
 - panel pinning for Cinnamon/Linux Mint
 - installed icon assets
+- bundled `Codex Linux Badge` tweak that shows a Linux badge inside the Codex app and on the Codex++ tweaks page
 - `codex-plusplus-linux` and `codex++` terminal commands
 - first-run install, launch, repair, logs, and doctor commands
 - per-user logs under `~/.local/share/codex-plusplus-linux`
@@ -37,6 +38,7 @@ Add screenshots before publishing the first release:
 - Cinnamon panel icon
 - first app launch
 - Codex++ tweaks/settings screen
+- bundled Linux badge inside Codex
 
 Suggested paths:
 
@@ -72,7 +74,7 @@ Not currently supported:
 Download the latest `.deb` from GitHub Releases, then install it:
 
 ```sh
-sudo apt install ./codex-plusplus-linux_0.1.0_amd64.deb
+sudo apt install ./codex-plusplus-linux_0.1.1_amd64.deb
 ```
 
 Then run:
@@ -88,6 +90,8 @@ Codex++ Linux
 ```
 
 On Cinnamon/Linux Mint, the installer also tries to pin `Codex++ Linux` to the bottom panel favorites.
+
+The installer also adds a bundled Codex++ tweak named `Codex Linux Badge`. It places a small Linux badge near the Codex app controls when the UI is available, and adds a visible Linux identity row inside the Codex++ tweaks/settings UI.
 
 ## Install From Source
 
@@ -111,7 +115,7 @@ scripts/build-deb.sh
 The package is written to:
 
 ```text
-dist/codex-plusplus-linux_0.1.0_amd64.deb
+dist/codex-plusplus-linux_0.1.1_amd64.deb
 ```
 
 ## Use The App
@@ -147,6 +151,7 @@ The doctor checks:
 - `codex-app-linux`
 - downloaded Codex desktop shell
 - desktop launcher and icon
+- bundled Linux badge tweak
 - Codex++ patch state
 - Codex++ watcher state
 

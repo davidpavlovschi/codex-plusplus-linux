@@ -26,7 +26,7 @@ codex-plusplus-linux doctor
 
 ```sh
 scripts/build-deb.sh
-sudo apt install ./dist/codex-plusplus-linux_0.1.0_amd64.deb
+sudo apt install ./dist/codex-plusplus-linux_0.1.1_amd64.deb
 ```
 
 ## Pull Request Checklist
