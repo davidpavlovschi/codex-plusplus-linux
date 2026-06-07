@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Document the Codex++ upstream sync state at `b-nnett/codex-plusplus@f98e7e9`.
+- Clarify that Codex++ Linux tracks upstream compatibility without merging unrelated source history.
+
 ## 0.2.0
 
 - Add local right-edge panel API daemon on `127.0.0.1:17654`.

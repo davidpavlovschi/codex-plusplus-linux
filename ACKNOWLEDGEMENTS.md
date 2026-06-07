@@ -16,6 +16,7 @@ OpenAI Codex is not bundled as this project's own work. It is used as an upstrea
 - Author/maintainer: b-nnett and contributors
 - License: MIT
 - Role in this project: provides the Codex desktop tweak system, runtime, patcher, watcher, and tweak-management behavior.
+- Latest checked upstream ref: `f98e7e9` on `main` (`Merge codex/1.0.0`), checked 2026-06-07.
 - Citation: Codex++ describes itself as a tweak system for the Codex desktop app that injects custom features, fixes UI bugs, and adds a tweak manager without rebuilding the app.
 
 Codex++ Linux exists mainly to make this work easier to install and launch on Linux desktops.

@@ -19,6 +19,19 @@ Codex++ Linux glues together three upstream projects:
 - [Codex++](https://github.com/b-nnett/codex-plusplus): the tweak system that patches the Codex desktop app and loads user tweaks.
 - [codex-app-linux](https://github.com/better-slop/codex-app-linux): the unofficial Linux desktop shell and packaging bridge for the Codex app.
 
+## Upstream Sync
+
+Codex++ Linux tracks Codex++ as an upstream dependency and inspiration, not as a Git fork. The repositories have unrelated histories: this project owns the Linux packaging, launcher, diagnostics, and desktop integration layer, while [b-nnett/codex-plusplus](https://github.com/b-nnett/codex-plusplus) owns the tweak system.
+
+Latest upstream check:
+
+- Upstream: `b-nnett/codex-plusplus`
+- Branch: `main`
+- Checked ref: `f98e7e9` (`Merge codex/1.0.0`)
+- Checked on: 2026-06-07
+
+For future syncs, fetch upstream and review Codex++ changes against the wrapper behavior before updating docs, compatibility notes, or installer assumptions. Do not merge unrelated upstream history into this package.
+
 This repo adds the Linux user experience around those pieces:
 
 - installable Debian package for Ubuntu, Debian, Linux Mint, Pop!_OS, Zorin, and similar distributions
